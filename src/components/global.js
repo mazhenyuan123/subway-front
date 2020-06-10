@@ -1,1 +1,1 @@
-export const baseUrl = 'http://asm.ccccrbim.com:8001/';
+export const baseUrl = 'http://117.107.179.8:8001/';

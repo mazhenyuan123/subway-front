@@ -34,6 +34,7 @@ export default class DataUpload extends Component{
         secondCity: cityData[provinceData[0]][0],
         fileList:[],
         uploading:false,
+        date:null
     };
     handleUpload = () => {
         const { fileList } = this.state;
@@ -49,6 +50,7 @@ export default class DataUpload extends Component{
 // You can use any AJAX library you like
         const param = new FormData();
         param.append("file", fileList[0]);
+        param.append("date",this.state.date)
 
         const config = {
             headers: { "Content-Type": "multipart/form-data" }
@@ -76,7 +78,13 @@ export default class DataUpload extends Component{
         });
     };
 
+    onChange=(e)=>{
+        console.log(e._d)
+        this.setState({
+            date:e._d
+        })
 
+    }
 
     render() {
         const { uploading, fileList } = this.state;
@@ -99,6 +107,7 @@ export default class DataUpload extends Component{
             },
             fileList,
         };
+
         return(
             <div>
                 <Form {...formItemLayout} className="form" >
@@ -127,7 +136,7 @@ export default class DataUpload extends Component{
                         </Button>
                     </Form.Item>
                     <Form.Item label="监测日期">
-                        <DatePicker />
+                        <DatePicker onChange={this.onChange}/>
                     </Form.Item>
                     <Form.Item label="数据文件">
                         <Dragger {...props}>

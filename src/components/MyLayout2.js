@@ -27,7 +27,7 @@ export default class MyLayout2 extends Component {
                     icon: 'bulb',
                     key: '/other',
                     subs: [
-                        {key: '/component1', title: '区间1', icon: 'bulb'},
+                        {key: '/component1', title: ' 广~堡区间', icon: 'bulb'},
                         {key: '/component2', title: '区间2', icon: 'bulb'},
                         {key: '/component3', title: '区间3', icon: 'bulb'},
                     ]
@@ -93,12 +93,10 @@ export default class MyLayout2 extends Component {
                             <h1 style={{color:'#fff'}}>中交基础设施养护集团轨道交通工程施工安全风险监控系统</h1>
                         </Col>
                         <Col span={4}>
-                            <Select defaultValue="7" style={{ width: 120 }}>
-                                <Option value="7">7号线</Option>
-                                <Option value="x">x号线</Option>
-                                <Option value="y">
-                                    y号线
-                                </Option>
+                            <Select defaultValue="7" style={{ width: 150 }}>
+                                <Option value="7">西安市地铁八号线</Option>
+                                {/*<Option value="x">x号线</Option>*/}
+                                {/*<Option value="y">y号线</Option>*/}
                             </Select>
                         </Col>
                         <Col span={4}><Button type='primary' onClick={this.handleLogout}>退出登录</Button></Col>
